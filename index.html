@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>Desenvolvimento HTML, CSS e JavaScript</title>
+
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  background-color: rgba(255, 234, 225, 0.952);
+  font-size: 1rem;
+  max-width: 100vw;
+  min-height: 100vh;
+  font-family: "Robot", sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: rgb(24, 17, 12);
+}
+
+.navegador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  margin-left: 24px;
+}
+
+.nav-list a {
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 200;
+  padding: 8px 16px;
+  color: white;
+}
+
+.nav-list a:hover,
+a:active {
+  font-weight: bold;
+}
+
+header h4 {
+  color: white;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: 400px;
+  background: url("/imagens/fundo4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 100;
+  width: 80%;
+}
+
+/*Main Portfolio*/
+main {
+  margin-bottom: 20px 0px;
+}
+
+.portfolio-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-section h2 {
+  font-size: 2rem;
+  padding: 20px 20px;
+  color: rgb(24, 17, 12);
+}
+
+.product-container {
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+}
+
+.product-box {
+  background-color: rgb(247, 244, 241);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+  cursor: pointer;
+  width: 250px;
+  height: 250px;
+}
+.product-box:hover {
+  transform: scale(1.1);
+}
+
+.product-box img {
+  border-radius: 5px 5px 0px 0px;
+  margin-bottom: 10px;
+  height: 80%;
+}
+
+.product-box .label {
+  padding: 0px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: rgb(10, 10, 10);
+}
+
+.product-box p {
+  padding: 0px 20px;
+  font-size: 1rem;
+}
+
+.about-section {
+  background-color: rgb(54, 18, 18);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  padding: 20px 20px;
+  color: rgb(250, 247, 244);
+}
+
+.about-section p {
+  font-size: 1rem;
+  padding: 0 20px;
+  color: rgb(250, 247, 244);
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.contact-section .row {
+  display: flex;
+  width: 100%;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  padding: 20px 20px;
+}
+
+.contact-section form {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section button {
+  font-size: 1em;
+  padding: 0.5em;
+  min-height: 50px;
+  border-radius: 8px;
+  border: 1px solid darkgray;
+  background: #00aa4a;
+  color: white;
+  outline: 0;
+  width: 500px;
+  cursor: pointer;
+}
+
+.contact-section .video {
+  width: 100%;
+  max-width: 550px;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-bottom: 10px;
+}
+
+.field label {
+  margin-bottom: 5px;
+}
+
+.field input,
+.field textarea {
+  font-size: 1em;
+  padding: 0.5em;
+  min-height: 50px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  outline: 0;
+}
+
+footer {
+  width: 100%;
+  padding: 15px 0;
+  background-color: black;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  color: white;
+}
+
+@media screen and (max-width: 960px) {
+  .product-container {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="navegador">
+        <h4>Vila dos doces</h4>
+
+        <ul class="nav-list">
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="banner">
+      <h1>Vila dos Doces</h1>
+      <h2>
+        ---------------- slogan ------------------
+      </h2>
+    </section>
+
+    <main>
+      <section id="portfolio" class="portfolio-section">
+        <h2>Portfólio</h2>
+
+        <div class="product-container">
+          <a href="" aria-labelledby="product1">
+            <figure class="product-box">
+              <img src="imagens/morangonordeste.jpg" alt="" />
+
+              <figpcation id="product1" class="label">
+                Morango do Nordeste
+              </figpcation>
+            </figure>
+          </a>
+
+          <a href="" aria-labelledby="product2">
+            <figure class="product-box">
+              <img src="imagens/bolorolo.jpg" alt="" />
+
+              <figpcation id="product2" class="label">
+                Bolo de Rolo
+              </figpcation>
+            </figure>
+          </a>
+
+          <a href="" aria-labelledby="product3">
+            <figure class="product-box">
+              <img src="imagens/moussechocolate.jpg" alt="" />
+
+              <figpcation id="product3" class="label">
+                Mousse de Chocolate
+              </figpcation>
+            </figure>
+          </a>
+
+          <a href="" aria-labelledby="product4">
+            <figure class="product-box">
+              <img src="imagens/paodemel.jpg" alt="" />
+
+              <figpcation id="product4" class="label">
+                Pão de Mel
+              </figpcation>
+            </figure>
+          </a>
+          <a href="" aria-labelledby="product1">
+            <figure class="product-box">
+              <img src="imagens/morangonordeste.jpg" alt="" />
+
+              <figpcation id="product1" class="label">
+                Morango do Nordeste
+              </figpcation>
+            </figure>
+          </a>
+
+          <a href="" aria-labelledby="product2">
+            <figure class="product-box">
+              <img src="imagens/bolorolo.jpg" alt="" />
+
+              <figpcation id="product2" class="label">
+                Bolo de Rolo
+              </figpcation>
+            </figure>
+          </a>
+
+          <a href="" aria-labelledby="product3">
+            <figure class="product-box">
+              <img src="imagens/moussechocolate.jpg" alt="" />
+
+              <figpcation id="product3" class="label">
+                Mousse de Chocolate
+              </figpcation>
+            </figure>
+          </a>
+
+          <a href="" aria-labelledby="product4">
+            <figure class="product-box">
+              <img src="imagens/paodemel.jpg" alt="" />
+
+              <figpcation id="product4" class="label">
+                Pão de Mel
+              </figpcation>
+            </figure>
+          </a>
+
+          <a href="" aria-labelledby="product1">
+            <figure class="product-box">
+              <img src="imagens/morangonordeste.jpg" alt="" />
+
+              <figpcation id="product1" class="label">
+                Morango do Nordeste
+              </figpcation>
+            </figure>
+          </a>
+
+          <a href="" aria-labelledby="product2">
+            <figure class="product-box">
+              <img src="imagens/bolorolo.jpg" alt="" />
+
+              <figpcation id="product2" class="label">
+                Bolo de Rolo
+              </figpcation>
+            </figure>
+          </a>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div>
+          <h2>Sobre nós</h2>
+          <p>
+            srfyguhughgyhnjnunuwqbdwjbdu
+            jiqediwohhoiefheohifh
+            swhudbuuiefubucebcuhiujhhu
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <h2>Contato</h2>
+
+        <div class="row">
+         <form>
+            <div class="field">
+              <label for="name">Nome completo</label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Digite seu nome..."
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="exemplo@email.com"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="subject">Assunto</label>
+              <input
+                id="subject"
+                type="text"
+                placeholder="Digite o assunto..."
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="message">Mensagem</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                required
+                placeholder="Digite sua mensagem..."
+              ></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+          </form>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Usw3f7p3hdU" title="BOMBOM DE MORANGO | MORANGO DO NORDESTE | KAREN MUNHOZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-container">
+          <h4>Vila dos doces</h4>
+
+          <div class="footer-contact">
+            <address>
+              Rua Vergueiro, 3185</br>
+              Vila Mariana, São Paulo
+
+              <article>
+                <p>
+                  <a href="tel:+551155712751">(11) 5571-2751</a> 
+                  ou 
+                  <a href="mailto:contato@apeperia.com">contato@apeperia.com</a>
+                </p>
+              </article>
+          </address>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
